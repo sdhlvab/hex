@@ -341,7 +341,7 @@ def heuristic_score(board, current_player):
     opp_cost = _shortest_path_cost_cached(key, opp)
     diff = opp_cost - my_cost
 
-    # Lekka preferencja kontaktu z brzegiem (pomaga w otwarciu).
+    # Lekka preferencja kontaktu z brzegiem (ważne dla P2 na kolumnie A, dla P1 na wierszu 1), pomaga w 'otwarciu'
     edge_bonus = 0
     if me == P1:
         if any(board[0][c] == P1 for c in range(COLS)):
